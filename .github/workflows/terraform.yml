@@ -40,19 +40,19 @@ jobs:
     #     aws-region: us-east-1
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
-    - name: Terraform Init
-      run: terraform init
-      working-directory: ${{ env.working-directory }}
+    # - name: Terraform Init
+    #   run: terraform init
+    #   working-directory: ${{ env.working-directory }}
 
 
-    # Generates an execution plan for Terraform
-    - name: Terraform Plan
-      run: terraform plan -out tfplan.binary
-      working-directory: ${{ env.working-directory }}
+    # # Generates an execution plan for Terraform
+    # - name: Terraform Plan
+    #   run: terraform plan -out tfplan.binary
+    #   working-directory: ${{ env.working-directory }}
       
-    - name: Terraform show
-      run: terraform show -json tfplan.binary > plan.json
-      working-directory: ${{ env.working-directory }}
+    # - name: Terraform show
+    #   run: terraform show -json tfplan.binary > plan.json
+    #   working-directory: ${{ env.working-directory }}
       
     - name: Setup Infracost
       uses: infracost/actions/setup@v1
