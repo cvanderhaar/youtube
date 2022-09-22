@@ -15,7 +15,7 @@ jobs:
     permissions:
       id-token: write
       contents: write
-      pull-requests: write
+      # pull-requests: write
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
@@ -34,7 +34,7 @@ jobs:
         terraform_wrapper: false # This is recommended so the `terraform show` command outputs valid JSON
     
     - name: Configure AWS credentials from Test account
-      uses: aws-actions/configure-aws-credentials@20ce4e5
+      uses: aws-actions/configure-aws-credentials@master
       with:
         role-to-assume: ${{ secrets.RoleArn }}
         aws-region: us-east-1
